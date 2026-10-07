@@ -1,0 +1,34 @@
+@startuml sequence
+title UC-04: Онлайн билет сатып алу
+actor "Көрермен" as A
+boundary "Интерфейс" as UI
+participant ":Сеанс" as S
+participant ":Брондау" as R
+participant ":Төлем" as P
+participant "Төлем жүйесі" as EXT <<external>>
+participant ":Билет" as T
+participant ":Хабарлама" as N
+
+A -> UI : 1: сеансты таңдау
+UI -> S : 2: getSeatMap()
+S --> UI : 3: орындар сұлбасы (бос / бос емес)
+A -> UI : 4: орынды таңдау
+UI -> R : 5: reserve(орындар, көрермен)
+R -> R : 6: орындарды 15 минутқа бекіту
+R --> UI : 7: брондау нөмірі, таймер 15:00
+A -> UI : 8: төлем әдісін таңдау, «Төлеу»
+UI -> P : 9: process(брондау, сома)
+P -> EXT : 10: төлем сұрауы
+EXT --> P : 11: төлем нәтижесі
+alt төлем сәтті
+  P -> R : 12: confirm()
+  R -> T : 13: generateQR()
+  T --> R : 14: QR-билет
+  R -> N : 15: send(билет)
+  N --> A : 16: QR-билет (e-mail / push)
+  R --> UI : 17: билет
+else төлем сәтсіз немесе 15 минут өтті
+  P -> R : 18: release()
+  R --> UI : 19: қате хабары, орындар босатылды
+end
+@enduml
