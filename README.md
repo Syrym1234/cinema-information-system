@@ -73,3 +73,7 @@ PlantUML кодын [plantuml.com](https://plantuml.com/) сайтындағы �
 | 3-ЗЖ. Талаптар, Use Case | `docs/requirements.md`, `docs/use-case.md` |
 | 4-ЗЖ. UML (Use Case, Sequence, Class) | `docs/diagrams/*.png`, `*.puml` |
 | 5-ЗЖ. Git және GitHub | Осы репозиторий: commit, branch, Pull Request, Issues |
+
+## Жаңа функциялар
+
+Жүйеге қосылған екі функция (топтық брондау және тағамға алдын ала тапсырыс) туралы толық сипаттама: [docs/new-features.md](docs/new-features.md).
