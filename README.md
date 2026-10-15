@@ -77,3 +77,14 @@ PlantUML кодын [plantuml.com](https://plantuml.com/) сайтындағы �
 ## Жаңа функциялар
 
 Жүйеге қосылған екі функция (топтық брондау және тағамға алдын ала тапсырыс) туралы толық сипаттама: [docs/new-features.md](docs/new-features.md).
+
+## 6-зертханалық жұмыс — SQL Server
+
+Бұл жұмыста кинотеатрдың дерекқоры құрылды.
+
+- 6 кесте жасалды.
+- PRIMARY KEY және FOREIGN KEY байланыстары орнатылды.
+- INSERT, UPDATE, DELETE командалары қолданылды.
+- SELECT және INNER JOIN сұраныстары орындалды.
+
+[SQL кодтары](sql/lab6/README.md)
